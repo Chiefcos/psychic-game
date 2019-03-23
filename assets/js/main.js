@@ -22,15 +22,8 @@ document.onkeyup = function(event){
     var userGuess = event.key;
     //Randomly chooses a choice from the options array. This is the Computer's guess.
     var randomAlphabet = alphabet[Math.floor(Math.random() * alphabet.length)];
-    //This checks if the randomAlphabet is working
-    
     // Pushes the randomAlphabet into an empty array named computerChoice
     computerChoice.push(randomAlphabet);
-    //Shows the user what key he pressed
-    console.log(computerChoice);
-    // alert("Users Guess: "+ userGuess);
-    //Shows the user what letter the computer guessed
-    // alert("Computers Letter: " + randomAlphabet);
     // Starts the function for the evaluator
     evaluator(userGuess, computerChoice[0]);
     // Starts the function for the history of what has been typed
@@ -60,7 +53,7 @@ function evaluator(user, com){
 // This function runs when the user wins and resets the guesses
 function agree(attempt1, attempt2){
     wins = wins + 1;
-    alert("you win: " + attempt1 + "equals " + attempt2);
+    alert("you win: " + attempt1 + " equals " + attempt2);
     userWins.textContent = wins;
     guessesLeft = 10
     reset();
